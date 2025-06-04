@@ -6,12 +6,12 @@ import sequelize from "./config/database";
 import cityRoutes from "./routes/ciudadRoutes";
 import clubRoutes from "./routes/clubRoutes";
 import eventoRoutes from "./routes/eventoRoutes";
-import equipoRoutes from './routes/equipoRoutes';
+import equipoRoutes from "./routes/equipoRoutes";
 
 dotenv.config();
 
 const app: Application = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
@@ -20,7 +20,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api", cityRoutes);
 app.use("/api", clubRoutes);
 app.use("/api", eventoRoutes);
-app.use('/api', equipoRoutes);
+app.use("/api", equipoRoutes);
 
 sequelize
   .sync()
