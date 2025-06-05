@@ -8,6 +8,7 @@ import clubRoutes from "./routes/clubRoutes";
 import eventoRoutes from "./routes/eventoRoutes";
 import equipoRoutes from "./routes/equipoRoutes";
 import ParticipacionClub from "./routes/participacionRoutes";
+import participacionMananaRoutes from "./routes/participacionMananaRoutes";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use("/api", clubRoutes);
 app.use("/api", eventoRoutes);
 app.use("/api", equipoRoutes);
 app.use("/api", ParticipacionClub);
+app.use("/api", participacionMananaRoutes);
 
 sequelize
   .sync()
